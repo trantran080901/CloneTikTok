@@ -5,6 +5,7 @@
     // DefaultLayout
     --default-layout-header-height: 60px;
     --default-layout-width-content: 1150px;
+    --text-color: #333;
 }
 
 html {
@@ -20,4 +21,14 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+input,
+button,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
 }
