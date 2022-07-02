@@ -6,6 +6,9 @@
     --default-layout-header-height: 60px;
     --default-layout-width-content: 1150px;
     --text-color: #333;
+    --primary: rgba(254, 44, 85, 1);
+    --black: #000;
+    --white: #fff;
 }
 
 html {
@@ -31,4 +34,5 @@ button,
 
 a[href] {
     color: var(--text-color);
+    text-decoration: none;
 }
