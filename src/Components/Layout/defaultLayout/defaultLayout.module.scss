@@ -8,6 +8,7 @@
     width: var(--default-layout-width-content);
     display: flex;
     max-width: 100%;
+    padding: 0px calc(var(--default-layout-horizontal-spacer) - 3px);
 }
 
 .content {

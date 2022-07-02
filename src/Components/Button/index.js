@@ -44,6 +44,7 @@ function Button({
         });
     }
     const classes = cx('wrapper', {
+        [className]: className,
         primary,
         outline,
         small,
@@ -51,7 +52,6 @@ function Button({
         text,
         disabled,
         rounded,
-        className,
         leftIcon,
         rightIcon,
     });

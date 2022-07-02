@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import images from '@/assest/images';
 
 import Tippy from '@tippyjs/react/headless';
-import 'tippy.js/dist/tippy.css'; // optional
+import 'tippy.js/dist/tippy.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
