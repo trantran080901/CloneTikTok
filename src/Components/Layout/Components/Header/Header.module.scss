@@ -106,3 +106,29 @@
     padding: 4px 8px;
     cursor: pointer;
 }
+
+// Login
+.action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // button
+    .action-user {
+        background-color: transparent;
+        font-size: 2.4rem;
+        color: rgb(22, 24, 35);
+        line-height: 21px;
+        padding: 4px 13px;
+        cursor: pointer;
+    }
+
+    //Avatar account
+    .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+        object-fit: cover;
+        margin-left: 12px;
+    }
+}
