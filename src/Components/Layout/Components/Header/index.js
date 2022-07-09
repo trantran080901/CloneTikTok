@@ -26,7 +26,8 @@ import Button from '@/Components/Button';
 import Menu from '@/Components/Popper/Menu';
 import { faCircleQuestion, faKeyboard, faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faTiktok } from '@fortawesome/free-brands-svg-icons';
-
+import { InboxIcon, UploadIcon } from '@/Components/Icons';
+import Image from '@/Components/Image';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -142,12 +143,12 @@ function Header() {
                             </Tippy>
                             <Tippy content="Message" placement="bottom" delay={[0, 200]}>
                                 <button className={cx('action-user')}>
-                                    <FontAwesomeIcon icon={faPaperPlane} />
+                                    <UploadIcon></UploadIcon>
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom" delay={[0, 200]}>
                                 <button className={cx('action-user')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </div>
@@ -163,11 +164,12 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/76c7261e5d03c8d5414879b18bef6f67~c5_100x100.jpeg?x-expires=1657033200&x-signature=j%2B00ikIdWqjsRRJkORHKXeh1E6Q%3D"
                                 alt="avatar"
-                            ></img>
+                                fallback="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/76c7261e5d03c8d5414879b18bef6f67~c5_100x100.jpeg?x-expires=1657033200&x-signature=j%2B00ikIdWqjsRRJkORHKXeh1E6Q%3D"
+                            ></Image>
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
