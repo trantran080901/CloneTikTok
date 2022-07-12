@@ -1,12 +1,12 @@
 import Tippy from '@tippyjs/react/headless';
 
-import styles from './Menu.module.scss';
 import classNames from 'classnames/bind';
+import styles from './Menu.module.scss';
 
 import { Wrappers as PopperWrapper } from '@/Components/Popper';
-import MenuItem from './MenuItem';
-import Header from './Header';
 import { useState } from 'react';
+import Header from './Header';
+import MenuItem from './MenuItem';
 
 const cx = classNames.bind(styles);
 

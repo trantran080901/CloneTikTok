@@ -1,33 +1,30 @@
-import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
+import styles from './Header.module.scss';
 
-import { useEffect, useState } from 'react';
 import images from '@/assest/images';
 
-import HeadlessTippy from '@tippyjs/react/headless';
+// import HeadlessTippy from '@tippyjs/react/headless';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; //optional
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleXmark,
-    faEllipsisVertical,
-    faMagnifyingGlass,
-    faPlus,
-    faGlobe,
-    faCloudArrowUp,
-    faGear,
     faArrowRightFromBracket,
+    faCloudArrowUp,
+    faEllipsisVertical,
+    faGear,
+    faGlobe,
+    faPlus,
 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Wrappers as PopperWrapper } from '@/Components/Popper';
-import AccountItem from '@/Components/AccountItem';
 import Button from '@/Components/Button';
-import Menu from '@/Components/Popper/Menu';
-import { faCircleQuestion, faKeyboard, faMessage, faPaperPlane, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { InboxIcon, UploadIcon } from '@/Components/Icons';
 import Image from '@/Components/Image';
+import Search from '@/Components/Layout/Components/Search';
+import Menu from '@/Components/Popper/Menu';
+import { faTiktok } from '@fortawesome/free-brands-svg-icons';
+import { faCircleQuestion, faKeyboard, faUser } from '@fortawesome/free-regular-svg-icons';
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -62,14 +59,7 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setSearchResult([1, 2, 3]);
-    //     }, 5000);
-    // }, []);
-    //Handle Menu Change
+    // Handle Menu Change
     const currentUser = true;
     const handleMenuChange = (menuItem) => {
         console.log(menuItem);
@@ -106,33 +96,8 @@ function Header() {
                 <div className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
                 </div>
-                <HeadlessTippy
-                    interactive
-                    // visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                Ket qua
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem></AccountItem>
-                                <AccountItem></AccountItem>
-                                <AccountItem></AccountItem>
-                                <AccountItem></AccountItem>
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input spellCheck={false} placeholder="Search accounts and videos"></input>
-                        <button className={cx('clear-btn')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
+                <Search />
 
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </HeadlessTippy>
                 <div className={cx('action')}>
                     {currentUser ? (
                         <div className={cx('current-user')}>
@@ -143,7 +108,7 @@ function Header() {
                             </Tippy>
                             <Tippy content="Message" placement="bottom" delay={[0, 200]}>
                                 <button className={cx('action-user')}>
-                                    <UploadIcon></UploadIcon>
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom" delay={[0, 200]}>
@@ -167,7 +132,7 @@ function Header() {
                             <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/76c7261e5d03c8d5414879b18bef6f67~c5_100x100.jpeg?x-expires=1657033200&x-signature=j%2B00ikIdWqjsRRJkORHKXeh1E6Q%3D"
-                                alt="avatar"
+                                alt="Lê Hồng Ngọc Trân"
                                 fallback="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/76c7261e5d03c8d5414879b18bef6f67~c5_100x100.jpeg?x-expires=1657033200&x-signature=j%2B00ikIdWqjsRRJkORHKXeh1E6Q%3D"
                             ></Image>
                         ) : (
