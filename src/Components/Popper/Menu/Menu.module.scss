@@ -4,8 +4,11 @@
     margin-top: 8px;
     .menu-popper {
         padding-bottom: 8px;
-        // Menu Items
 
+        // Menu Items
+        .menu-scrollable {
+            overflow-y: auto;
+        }
         .menu-item {
             margin-left: 0;
             width: 100%;
@@ -31,6 +34,7 @@
     align-items: center;
     height: 50px;
     line-height: 20px;
+    flex-shrink: 0;
 }
 .back-btn {
     width: 50px;

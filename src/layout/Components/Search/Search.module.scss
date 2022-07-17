@@ -13,13 +13,14 @@
     border: 1px solid transparent;
     input {
         flex: 1px;
-        font-weight: 400;
         width: 292px;
         height: 100%;
         font-size: 16px;
         background: transparent;
         padding: 12px;
-        caret-color: rgb(135, 14, 14);
+        caret-color: var(--primary);
+        font-family: var(--font-family);
+        font-weight: 200;
     }
 
     input:not(:placeholder-shown) ~ .search-btn {
